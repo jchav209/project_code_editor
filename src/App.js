@@ -10,7 +10,7 @@ function App() {
   const [html, setHtml] = useState('');
   const [css, setCss] = useState('');
   const [js, setJs] = useState('');
-  const [srcDoc, setSrcDoc] = useState(` `);
+  const [srcDoc, setSrcDoc] = useState(``);
 
   const onTabClick = (editorName) => {
     setOpenedEditor(editorName);
