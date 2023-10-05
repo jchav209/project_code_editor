@@ -8,6 +8,8 @@ import 'codemirror/theme/night.css';
 import 'codemirror/mode/xml/xml';
 import 'codemirror/mode/javascript/javascript';
 import 'codemirror/mode/css/css';
+import 'codemirror/addon/edit/closetag';
+import 'codemirror/addon/edit/closebrackets';
 
 
 import { Controlled as ControlledEditorComponent } from 'react-codemirror2';
@@ -17,6 +19,7 @@ const Editor = ({ language, value, setEditorState }) => {
     const [theme, setTheme] = useState("dracula")
     const handleChange = (editor, data, value) => {
         setEditorState(value);
+        // console.log(value); // To test it
     }
 
     const themeArray = ['dracula', 'material', 'mdn-like', 'the-matrix', 'night']
@@ -40,11 +43,15 @@ const Editor = ({ language, value, setEditorState }) => {
                 value     = {value}
                 className = "code-mirror-wrapper"
                 options   = {{
-                    lineWrapping: true,
-                    lint:         true,
-                    mode:     language,
-                    lineNumbers:  true,
-                    theme:       theme,
+                    lineWrapping:      true,
+                    lint:              true,
+                    mode:          language,
+                    lineNumbers:       true,
+
+                    theme:            theme,
+
+                    autoCloseTags:     true,
+                    autoCloseBrackets: true,
                 }}
             />
         </div>
