@@ -71,7 +71,7 @@ function App() {
       <div className="editor-container">
         {
           openedEditor === 'html' ? (
-            <><p>The html editor is open</p>
+            <><p>The HTML editor is open</p>
             <Editor
               language="xml"
               value={html}
