@@ -10,7 +10,7 @@ function App() {
   const [openedEditor, setOpenedEditor] = useState('html');
 
   const [html, setHtml] = useState('');
-  const [python, setPython] = useState('');
+  const [python, setPython] = useState(''); // Added Python
   const [css, setCss] = useState('');
   const [js, setJs] = useState('');
   const [srcDoc, setSrcDoc] = useState(``);
@@ -24,9 +24,9 @@ function App() {
       setSrcDoc(
         `
           <html>
-            <body> ${html} ${python}</body>
+            <body> ${html}</body>
             <style>${css}</style>
-            <script>${js}</script>
+            <script>${js} ${python}</script>
           </html>
         `
       )
