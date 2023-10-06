@@ -45,3 +45,21 @@
   padding-top: 0.4%;
 }
 
+.button{
+  background-color:lightgreen
+}
+
+.footer{
+  display: none
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: lightblue;
+}
+
+iframe{
+  background-color: blue;
+}
