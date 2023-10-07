@@ -10,17 +10,28 @@ import 'codemirror/mode/javascript/javascript';
 import 'codemirror/mode/css/css';
 import 'codemirror/addon/edit/closetag';
 import 'codemirror/addon/edit/closebrackets';
-
-
+// import pyodide from 'pyodide';
 import { Controlled as ControlledEditorComponent } from 'react-codemirror2';
 
 
 const Editor = ({ language, value, setEditorState }) => {
     const [theme, setTheme] = useState("dracula")
+
     const handleChange = (editor, data, value) => {
         setEditorState(value);
         // console.log(value); // To test it
     }
+
+    // const executePythonCode = async (code) => {
+    //     try {
+    //         const result = await pyodide.runPythonAsync(code);
+    //         // Handle the result as needed (e.g., display it in the console or update the state).
+    //         console.log(result);
+    //       } catch (error) {
+    //         // Handle any errors that occur during Python execution.
+    //         console.error(error);
+    //       }
+    // };
 
     const themeArray = ['dracula', 'material', 'mdn-like', 'the-matrix', 'night']
 
@@ -54,6 +65,13 @@ const Editor = ({ language, value, setEditorState }) => {
                     autoCloseBrackets: true,
                 }}
             />
+            {/* <button1
+                onClick={() => {
+                    executePythonCode(value);
+                }}
+            >
+                Execute Python
+            </button1> */}
         </div>
   )
 }
